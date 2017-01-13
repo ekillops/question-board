@@ -1,0 +1,15 @@
+{{#if showEditForm}}
+  <h4>Edit Question</h4>
+  <form>
+    <div class="form-group">
+      {{textarea value=questionText class="form-control" placeholder="New question text"}}
+    </div>
+    <div class="form-group">
+      {{input value=questionNotes class="form-control" placeholder="Notes"}}
+    </div>
+    <button class="btn btn-sm btn-default" {{action 'updateQuestion' question}}>Update</button>
+    <button class="btn btn-sm btn-default" {{action 'cancelEdit' question}}>Cancel</button>
+  </form>
+{{else}}
+  <button class="btn btn-sm btn-default" {{action 'editQuestion' question}}>Edit Question</button>
+{{/if}}

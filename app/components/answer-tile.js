@@ -4,11 +4,14 @@ export default Ember.Component.extend({
   actions: {
 
     deleteAnswer(answer) {
-      var params = {
-        answer: answer,
-        question: this.get('question')
-      };
-      this.sendAction('deleteAnswer', params);
+      if (confirm('Are your sure you want to delete this answer?')) {
+        var question = this.get('question');
+        var params = {
+          answer: answer,
+          question: question
+        };
+        this.sendAction('deleteAnswer', params);
+      }
     }
 
   }
