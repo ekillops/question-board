@@ -3,10 +3,15 @@
 </div>
 <div class="row">
   <div class="col-md-8">
-    {{#each model as |question|}}
-      <h5>{{question.question}}</h5>
-      <p><small>Asked by {{question.author}}. {{#link-to 'question' question.id}}View Question{{/link-to}}</small></p>
-    {{/each}}
+    <div class="question-list">
+      <h4>Questions:</h4>
+      <hr>
+      {{#each model as |question|}}
+        <h5>{{question.question}}</h5>
+        <p><small>Asked by {{question.author}}. {{#link-to 'question' question.id}}View Question{{/link-to}}</small></p>
+        <br>
+      {{/each}}
+    </div>
   </div>
   <div class="col-md-4">
     {{new-question saveQuestion='saveQuestion'}}
