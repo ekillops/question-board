@@ -2,8 +2,8 @@
 <div class="row">
   <div class="col-md-8">
     <h4>{{model.question}}</h4>
-    <p>Notes: {{model.notes}}</p>
-    <p><small>Asked by {{model.author}}</small></p>
+    <p><small>Notes:</small> {{model.notes}}</p>
+    <p><small>Asked by</small> {{model.author}} <button class="btn btn-xs btn-link" {{action 'deleteQuestion' model}}><small>Delete Question</small></button></p>
   </div>
   <div class="col-md-4">
     {{edit-question updateQuestion='updateQuestion' question=model}}

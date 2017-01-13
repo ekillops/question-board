@@ -5,7 +5,7 @@ export default Ember.Component.extend({
   actions: {
 
     editQuestion() {
-      this.set('showEditForm', true);
+      this.toggleProperty('showEditForm');
     },
 
     cancelEdit() {
