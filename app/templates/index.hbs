@@ -1,1 +1,14 @@
-
+<div class="row welcome">
+  <p>Welcome to Question Board! If you have a question you need answering please post it here and one of our many users will help you answer it. You can also browse other users questions below.</p>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    {{#each model as |question|}}
+      <h5>{{question.question}}</h5>
+      <p><small>Asked by {{question.author}}. {{#link-to 'question' question.id}}View Question{{/link-to}}</small></p>
+    {{/each}}
+  </div>
+  <div class="col-md-4">
+    {{new-question saveQuestion='saveQuestion'}}
+  </div>
+</div>

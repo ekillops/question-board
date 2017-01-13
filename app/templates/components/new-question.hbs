@@ -1,0 +1,17 @@
+{{#if askNewQuestion}}
+  <h5>NEW QUESTION</h5>
+  <form>
+    <div class="form-group">
+      {{input value=author class="form-control" placeholder="Your name"}}
+    </div>
+    <div class="form-group">
+      {{textarea value=question class="form-control" placeholder="Question?"}}
+    </div>
+    <div class="form-group">
+      {{input value=notes class="form-control" placeholder="Additional notes"}}
+    </div>
+    <button class="btn btn-sm btn-default" {{action 'saveQuestion'}}>Ask!</button>
+  </form>
+{{else}}
+  <button class="btn btn-sm btn-default" {{action 'newQuestion'}}>New Question</button>
+{{/if}}
