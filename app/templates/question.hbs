@@ -7,8 +7,19 @@
     <p>Notes: {{model.notes}}</p>
   </div>
 </div>
+<hr>
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-8">
+    {{#if model.answers}}
+      <h4>Answers:</h4>
+      {{#each model.answers as |answer|}}
+        {{answer-tile answer=answer question=model deleteAnswer='deleteAnswer'}}
+      {{/each}}
+    {{else}}
+      <h4>This question has not been answered yet</h4>
+    {{/if}}
+  </div>
+  <div class="col-md-4">
     {{answer-question saveAnswer='saveAnswer' question=model}}
   </div>
 </div>

@@ -4,7 +4,7 @@ export default Ember.Route.extend({
   model(params) {
     return this.store.findRecord('question', params.question_id);
   },
-
+  
   actions: {
 
     saveAnswer(params) {
@@ -14,6 +14,13 @@ export default Ember.Route.extend({
       newAnswer.save().then(function() {
         return question.save();
       });
+      this.transitionTo('question', question.id);
+    },
+
+    deleteAnswer(params) {
+      var answer = params.answer;
+      var question = params.question;
+      answer.destroyRecord();
       this.transitionTo('question', question.id);
     }
 
